@@ -6,16 +6,17 @@
     color: #fff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     background: url("images/ElyBG4.jpg");/* no-repeat center center fixed;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-
-#bg {
-
 }
 
 section {
@@ -43,7 +44,6 @@ section {
     z-index: -1;
     display: flex;
     color: #fff;
-    z-index: -1;
     align-items: center;
     justify-content: flex-end;
     padding-right: 5vw;
