@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Poppins:wght@300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family: 'Merienda', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 section {
@@ -22,7 +21,7 @@ section {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
-    font-size: calc(11px + 0.8vh);
+    font-size: calc(8px + 0.8vw);
 }
 
 #main {
@@ -32,6 +31,18 @@ section {
 }
 
 #first {
+    text-align: center;
+}
+
+#kwek {
+    border-radius: 10px;
+    width: 30vw;
+    min-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#info {
     text-align: center;
 }
 
@@ -54,24 +65,24 @@ a {
     text-decoration: none;
     cursor: pointer;
     border-radius: 10px;
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif;
 }
 
 label {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
 }
 
 input {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: calc(11px + 0.8vh);
-    padding: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: calc(8px + 0.8vw);
+    padding: 8px;
 }
 
 select  {
-    font-size: calc(11px + 0.8vh);
+    font-size: calc(8px + 0.8vw);
     text-align: center;
 }
 
@@ -80,11 +91,11 @@ select  {
 }
 
 .radio-con input {
-    margin-left: 20px;
+    margin-left: 1.5vw;
 }
 
 .radio-con label {
-    margin-right: 20px;
+    margin-right: 1.5vw;
 }
 
 #submit {
@@ -94,17 +105,14 @@ select  {
 }
 
 .container {
-    /* background-color: rgba(255, 255, 255, 1); */
-    padding: 50px;
-    /* border-radius: 25px; */
+    padding: 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     box-shadow: 0px 2px 38px rgba(0, 0, 0, 0.7);
-    height: 60vh;
-    width: 32vw;
-    min-height: 450px; 
-    min-width: 500px; 
+    height: 80vh;
+    width: 40vw;
+    min-width: 300px;
     background: rgb(245, 238, 174);
     border-top-left-radius: 250px 15px;
     border-bottom-left-radius: 20px 115px;
@@ -128,16 +136,7 @@ input[type=submit] {
     border-radius: 10px;
 }
 
-img {
-    display: block;
-    width: 28vh;
-    border-radius: 40px;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-#pic {
+#col {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -145,8 +144,47 @@ img {
 }
 
 input[type=textarea] {
-    width: 500px;
-    min-width: 400px;
+    width: 35vw;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
 }
+
+input[type=text], input[type=email]{
+    border: none;
+    border-radius: 10px;
+    width: 30vw;
+}
+
+input[type=number] {
+    border: none;
+    border-radius: 10px;
+}
+
+input[type=checkbox] {
+    height: 1.4vw;
+    width: 1.4vw;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #eee;
+}
+
+input[type="radio"] {
+    height: 1.4vw;
+    width: 1.4vw;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #eee;
+}
+
+#front .container, #thanks .container{
+    background: rgb(245, 238, 174);
+}
+
+section .container{
+    background-image: linear-gradient(rgba(245, 238, 174,1), rgba(245, 238, 174,0.7)),url(images/sf.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+

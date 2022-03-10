@@ -9,31 +9,35 @@
 </head>
 <body>
     <div id="main">
-        <section id="personal-info">
-            <div class="container" id="first">
-                <br>
+        <section id="front">
+            <div class="container" id="first"><br>
                 <h1 id ="title">Filipino Street Foods Survey</h1>
                 <p id="description">This survey aims to know the preferred Pinoy street foods of an individual. </p>
-                <br><br><br><br>
-                <form action="results.html" id="survey-form" method="get">
+                <br><br><img src="images/kwek.jpg" id="kwek"><br><br><br>
+                <p><a href="index.html#personal-info">Start</a></p><br><br><br>
+            </div>
+        </section>
+        <section id="personal-info">
+            <div class="container">
+            <br>
+            <form action="results.html" id="survey-form" method="get">
                 <div id="info">
                     <p>Please enter your information.</p><br>
                     <label for="password" id="name-label">Name:</label>
                     <input
-                        required
                         type="text"
                         id="name"
                         size="30"
-                        placeholder="Enter your name here">
+                        placeholder="Enter your name here"
+                        required>
                     <br>
-                    <label for="email"id="email-label">E-mail:</label>
+                    <label for="email"id="email-label">Email:</label>
                     <input
                         required
                         type="email"
                         id="email"
                         placeholder="Enter your email here"
                         size="30">
-                    <!-- email validation required-->
                     <br>
                     <label for="number" id="number-label">Age:</label>
                     <input
@@ -59,111 +63,120 @@
                             name="gender"> 
                         <label for="female">Female</label>
                     </div>
-                    <br><br>
+                    <br><br><br>
                     <p><a href="index.html#streetfoods">Next</a></p>
-                    <br><br><br><br><br>
+                    <br><br>
                 </div>
             </div>
         </section>
+        </section>
         <section id="streetfoods">
-            <div class="container" >
-                <p>Choose your favorite street food(s)!</p><br>
-                <div id="pic">
-                <div class="choices">
-                    <input
-                        id="fishball"
-                        value="fishhballsauce"
+            <div class="container">
+                <p>Choose your favorite street food(s)!</p><br><br>
+                <div id="col">
+                    <div class="choices">
+                        <input
+                            id="fishball"
+                            value="fishhballsauce"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="fishball">Fishball</label>
+                        <br>
+                        <input
+                            id="kikiam"
+                            value="kikiam"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="kikiam">Kikiam</label>
+                        <br>
+                        <input
+                            id="kwekkwek"
+                            value="kwekkwek"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="kwekkwek">Kwek-kwek</label>
+                        <br>
+                        <input
+                            id="squidball"
+                            value="squidball"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="squidball">Squid ball</label>
+                        <br>
+                        <input
+                            id="chickball"
+                            value="chickball"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="chickball">Chicken ball</label>
+                        <br>
+                        <input
+                            id="chickskin"
+                            value="chickskin"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="chickskin">Chicken Skin</label>
+                        <br>
+                        <input
+                            id="hotdog"
+                            value="hotdog"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="hotdog">Hotdog</label>
+                    
+                    </div>  
+                    <div class="choices"> 
+                        <input
+                            id="isaw"
+                            value="isaw"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="isaw">Isaw</label>
+                        <br>
+                        <input
+                            id="bbq"
+                            value="bbq"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="bbq">Barbeque</label>
+                        <br>
+                        <input
+                            id="betamax"
+                            value="betamax"
+                            type="checkbox"
+                            name="betamax"> 
+                        <label for="betamax">Betamax</label>
+                        <br>
+                        <input
+                            id="balinget"
+                            value="balinget"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="balinget">Balinget</label>
+                        <br>
+                        <input
+                            id="balut"
+                            value="balut"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="balut">Balut</label>
+                        <br>
+                        <input
+                            id="calamares"
+                            value="calamares"
+                            type="checkbox"
+                            name="streetfoods"> 
+                        <label for="calamares">Calamares</label>
+                        <br>
+                        <input
+                        id="siomai"
+                        value="siomai"
                         type="checkbox"
-                        name="streetfoods"> 
-                    <label for="fishball">Fishball</label>
-                    <br>
-                    <input
-                        id="kikiam"
-                        value="kikiam"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="kikiam">Kikiam</label>
-                    <br>
-                    <input
-                        id="kwekkwek"
-                        value="kwekkwek"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="kwekkwek">Kwek-kwek</label>
-                    <br>
-                    <input
-                        id="squidball"
-                        value="squidball"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="squidball">Squid ball</label>
-                    <br>
-                    <input
-                        id="chickball"
-                        value="chickball"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="chickball">Chicken ball</label>
-                    <br>
-                    <input
-                        id="isaw"
-                        value="isaw"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="isaw">Isaw</label>
-                    <br>
-                    <input
-                        id="bbq"
-                        value="bbq"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="bbq">Barbeque</label>
-                    <br>
-                    <input
-                        id="betamax"
-                        value="betamax"
-                        type="checkbox"
-                        name="betamax"> 
-                    <label for="betamax">Betamax</label>
-                    <br>
-                    <input
-                        id="balinget"
-                        value="balinget"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="balinget">Balinget</label>
-                    <br>
-                    <input
-                        id="chickskin"
-                        value="chickskin"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="chickskin">Chicken Skin</label>
-                    <br>
-                    <input
-                        id="balut"
-                        value="balut"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="balut">Balut</label>
-                    <br>
-                    <input
-                        id="calamares"
-                        value="calamares"
-                        type="checkbox"
-                        name="streetfoods"> 
-                    <label for="calamares">Calamares</label>
-                    <br>
-                    <input
-                    id="siomai"
-                    value="siomai"
-                    type="checkbox"
-                    name="siomai"> 
-                <label for="siomai">Siomai</label>
-                </div>  
-                <div><img src="images/isaw.png" /></div>
+                        name="siomai"> 
+                        <label for="siomai">Siomai</label>
+                    </div>
                 </div>
-                <br><br><br>
+                <br><br>
                 <p>
                     <a href="index.html#sauce">Next</a>
                 </p>
@@ -241,7 +254,7 @@
         </section> 
         <section id="additional">
             <div class="container">
-                <p><label for="comments">Any street foods that you like that aren't on the list?</label><br>
+                <p><label for="comments">Please enter street foods that you like that aren't on the list.</label><br>
                 </p>
                 <input type="textarea" id="instructions" name="instructions" placeholder="Enter your other favorite street foods here" size="30">
                 </textarea>
