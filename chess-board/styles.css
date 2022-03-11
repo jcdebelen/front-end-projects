@@ -46,24 +46,24 @@ body {
         height: 90vw;
         width: 90vw;
         border-width: 1vw;
-        min-width: 100px;
-        min-height: 100px;
+        min-width: 60px;
+        min-height: 60px;
     }
 
     .square {
         width: 11.25vw;
         height: 11.25vw;
         font-size: 8vw;
-        min-width: 12.5px;
-        min-height: 12.5px;
+        min-width: 7.5px;
+        min-height: 7.5px;
     }
 
     .squared {
         width: 11.25vw;
         height: 11.25vw;
         font-size: 8vw;
-        min-width: 12.5px;
-        min-height: 12.5px;
+        min-width: 7.5px;
+        min-height: 7.5px;
     }
 
 }
@@ -95,30 +95,24 @@ body {
         height: 90vw;
         width: 90vw;
         border-width: 1vw;
-        min-width: 100px;
-        min-height: 100px;
     }
 
     .square {
         width: 11.25vw;
         height: 11.25vw;
         font-size: 8vw;
-        min-width: 12.5px;
-        min-height: 12.5px;
     }
 
     .squared {
         width: 11.25vw;
         height: 11.25vw;
         font-size: 8vw;
-        min-width: 12.5px;
-        min-height: 12.5px;
     }
 
 }
 
 
-@media only screen and (min-width: 1020px) and (min-height: 640px) {
+@media only screen and (min-width: 920px) and (min-height: 640px) {
 
     #cb {
         height: 90vh;
