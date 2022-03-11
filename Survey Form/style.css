@@ -141,13 +141,16 @@ input[type=submit] {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 8px;
 }
 
-input[type=textarea] {
+textarea {
     width: 35vw;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
+    font-size: calc(8px + 0.8vw);
+    padding: 10px;
 }
 
 input[type=text], input[type=email]{
