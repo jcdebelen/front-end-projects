@@ -14,13 +14,23 @@ body {
     background-size: cover;
 }
 
+h1 {
+    text-align: center;
+    margin: 1vmin;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 5vmin;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke-width: 0.1vmin;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+
 #chessboard {
-    height: 90vmin;
-    width: 90vmin;
+    height: 85vmin;
+    width: 85vmin;
     display: grid;
     grid-template-columns: repeat( 8, 12.5% );
     grid-template-rows: repeat( 8, 12.5%  );
-    font-size: 9vmin;
+    font-size: 8.5vmin;
     border-style: solid;
     border-color: rgb(199, 161, 114);
     border-width: 1.5vmin;
@@ -38,16 +48,18 @@ body {
 .square:hover {
     -webkit-text-stroke-width: 0.2vmin !important;
     -webkit-text-stroke-color: rgb(250, 133, 0) !important;
+    transition: 0.3s;
 }
 
-.square:nth-child(-2n+7), 
-.square:nth-child(9) ~.square:nth-child(-2n+16),
-.square:nth-child(16) ~.square:nth-child(-2n+23),
-.square:nth-child(25) ~.square:nth-child(-2n+32),
-.square:nth-child(32) ~.square:nth-child(-2n+39),
-.square:nth-child(41) ~.square:nth-child(-2n+48),
-.square:nth-child(48) ~.square:nth-child(-2n+55),
-.square:nth-child(57) ~.square:nth-child(-2n+64)  {
+.square:nth-child(16n+1),
+.square:nth-child(16n+3),
+.square:nth-child(16n+5),
+.square:nth-child(16n+7),
+.square:nth-child(16n+10),
+.square:nth-child(16n+12),
+.square:nth-child(16n+14),
+.square:nth-child(16n+16)
+{
     background-color: rgb(255, 230, 206);
 }
 
