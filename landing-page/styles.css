@@ -63,15 +63,23 @@ ul {
 }
 
 li {
-    margin-left: 2vw;
-    margin-right: 2vw;
     letter-spacing: 2px;
+    padding: 0 2vw 0 2vw;
+    box-sizing: border-box;
+}
+
+li:hover {
+    border-left: black;
+    border-right: black;
+    border-style: double;
 }
 
 a {
     text-decoration: none;
     color: black;
 }
+
+
 
 #product {
     position: relative;
@@ -368,6 +376,11 @@ section {
     #title {
         top: 45%;
     }
+
+    ul a:nth-child(1) {
+        display: none;
+    }
+
 }
 
 
@@ -425,6 +438,14 @@ section {
     margin-left: 2vw;
 }
 
+#more {
+    color: #ffffff;
+    -webkit-text-stroke-width: 0.1vmin;
+    -webkit-text-stroke-color: black;
+    font-size: 250%;
+}
+
+
 .price span {
     display: flex;
     justify-content: center;
@@ -465,6 +486,7 @@ section {
     z-index: 3;
     box-sizing: border-box;
 }
+
 .itemhover:hover {
     border: black;
     border-style: solid;
@@ -475,6 +497,10 @@ section {
 
 @media only screen and (orientation: portrait) {
     .shoepic {
+        width: 45vw;
+    }
+
+    .itemhover {
         width: 45vw;
     }
 
@@ -491,6 +517,10 @@ section {
 
     .price {
         margin-right: 5vw;
+    }
+
+    .itemhover {
+        width: 90vw;
     }
 
 }
