@@ -13,15 +13,18 @@
         <!-- Nav bar must be at the top -->
         <div id="header">
             <div><a href="index.html"><img src="assets/logo.png" id="header-img"/></a></div>
-            <div>
+            <div class="neg">
                 <nav id="nav-bar">
                     <ul>
                         <a href="index.html" class="nav-link"><li>Home</li></a>
                         <a href="shop.html" class="nav-link"> <li>Shop</li> </a>
                         <a href="features.html" class="nav-link"><li>Features</li></a>
-                        <a href="about.html" class="nav-link"><li>About</li></a>
+                        <a href="support.html" class="nav-link"><li>Support</li></a>
                     </ul>
-                    <!-- At least 3 nav links, should be working -->
+                    <div id="tray"> 
+                        <img src="assets/bag.png" id="bag">
+                        <img src="assets/search.png" id="search">
+                    </div>
                 </nav>
             </div>
         </div>
@@ -146,12 +149,6 @@
                 </div>
                 <div class="itemhover"></div>
             </div>
-            <div class="shoeitem">
-                <a href="https://www.adidas.com.ph/ultraboost" target=_blank><img src="assets/collection.jpg" class="shoepic"></a>
-                <div class="shoptext">
-                    <h2 class="shoecaption" id="more">View more</h2>
-                </div>
-            </div>
         </section>
         <section id="newsletter">
             <h2>Be the first to get the news about the Ultraboost!</h2>
@@ -165,5 +162,19 @@
             <p>All images are owned by © Adidas. Made by JC 🤘 </p>
         </section>
     </div>
+    <div id="hamburger" class="dropbtn" onclick="myFunction(this)">
+        <div id="myDropdown" class="dropdown-content">
+            <a href="index.html" class="nav-link">View Cart (0)</a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="shop.html" class="nav-link">Shop</a>
+            <a href="features.html" class="nav-link">Features</a>
+            <a href="support.html" class="nav-link">Support</a>
+        </div>
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

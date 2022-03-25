@@ -13,29 +13,47 @@
         <!-- Nav bar must be at the top -->
         <div id="header">
             <div><a href="index.html"><img src="assets/logo.png" id="header-img"/></a></div>
-            <div>
+            <div class="neg">
                 <nav id="nav-bar">
                     <ul>
                         <a href="index.html" class="nav-link"><li>Home</li></a>
                         <a href="shop.html" class="nav-link"> <li>Shop</li> </a>
                         <a href="features.html" class="nav-link"><li>Features</li></a>
-                        <a href="about.html" class="nav-link"><li>About</li></a>
+                        <a href="support.html" class="nav-link"><li>Support</li></a>
                     </ul>
-                    <!-- At least 3 nav links, should be working -->
+                    <div id="tray"> 
+                        <img src="assets/bag.png" id="bag">
+                        <img src="assets/search.png" id="search">
+                    </div>
                 </nav>
             </div>
         </div>
         <section id="boost">
+            <img src="assets/adidas-Ultra-Boost-DNA-CNY.png" id="cny">
             <div id="fcon">
-                <h2>WHAT ARE THE FEATURES OF BOOST?</h2>
+                <h1>WHAT IS BOOST?</h1>
+                <p>It's hard to imagine adidas without Boost—the revolutionary performance shoe technology that first hit the pavement in 2013. Boost was unlike anything that came before, and its energy return technology would go on to change the course of running forever. Today, adidas continues to iterate Boost and push the concept even further ahead.</p>
+                <p>adidas Boost technology is a product of the adidas Innovation Team (AIT) and German chemists BASF. It was created to bring together the formerly contradictory benefits of soft and responsive cushioning. At the time, EVA foam was the industry standard for performance running shoes. Boost was about to change all that, introducing a midsole made from thousands of expanded particles that work together to deliver an uptick of energy return in every stride.</p>
+                <h1>WHAT ARE THE FEATURES OF BOOST?</h1>
                 <p>Boost has always been known for its energy return, but there are actually five Boost benefits that elevate the running experience. Let's start with comfort: the cushioning properties of Boost make it feel like you’re running on tiny, precision-engineered clouds. Boost is also designed to cope with a wide range of temperatures, making it the kind of running shoe that can pound through wind, snow, sun, rain—whatever—with no issues.
                     <br><br>The third and fourth benefits of Boost are durability and flexibility. Boost is a technology that can hold up for mile after mile without any loss of performance. At the same time, Boost is flexible enough to provide a silky smooth ride—no matter what pace you’re setting.
                     <br><br> But we can't talk about Boost without talking about energy return—the fifth and most famous benefit of Boost. The power to absorb and return more of an athlete’s kinetic output is what changed the performance shoe industry forever. There have been many imitators, but Boost remains the icon of energy return.</p>                        
                     <iframe id=video2 src="https://www.youtube.com/embed/6icItMrGasY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe>
-                <h2>HOW IS BOOST MADE?</h2>
+                <h1>HOW IS BOOST MADE?</h1>
                 <p>To create Boost, thermoplastic polyurethane particles are expanded to form closed cells around tiny pockets of air. The resulting product is known as expanded thermoplastic polyurethane — or eTPU, for short.</p>
                 <img src="assets/sole.webp" id="sole">
-                <span id="shop"><a target="_blank" href="https://www.adidas.com/us/blog/439874-what-is-adidas-boost-technology">Read more about the boost 🡒</a></span>
+                <h1>THE EVOLUTION OF BOOST</h1>
+                <p>From its first commercial release in 2013, Boost has set new standards for performance shoe technology and constantly pushed that narrative forward with iteration and improvement. Here’s a quick timeline of some of the major achievements of Boost.
+                <br><br>2013: Energy Boost premieres as the first adidas running shoe with a Boost midsole. <br>
+                    2014: adiZero adios Boost wins the Men’s WR at the Berlin Marathon. <br>
+                    2015: Ultraboost becomes a crossover hit of high-performance running and fashion. <br>
+                    2016: Ultraboost X pushes the design even further with a laceless upper and targeted support. <br>
+                    2017: adiZero adios Boost wins the Women’s WR at the London Marathon. <br>
+                    2018: Ultraboost x Parley incorporates upcycled and recycled waste into its iconic design. <br>
+                    2019: The story of Boost continues with the release of Ultraboost 19 and Pulseboost HD.<br>
+                    2020: Ultraboost 20 incorporates a motion weave midfoot providing flexibility and control. <br>
+                    2021: UB21 adds an additional 6% Boost capsules providing incredible energy return and a stable, comfortable, and supportive fit designed to protect your stride all day.</p>
+                <span id="shop"><a target="_blank" href="https://www.adidas.com/us/blog/439874-what-is-adidas-boost-technology">Read more about the boost <img src="assets/arrowb.png" id="arrowb" /></a></span>
             </div>
         </section>
         <section id="newsletter">
@@ -50,9 +68,19 @@
             <p>All images are owned by © Adidas. Made by JC 🤘<p>
         </section>
     </div>
-    
-    
-    
-    </div>
+    <div id="hamburger" class="dropbtn" onclick="myFunction(this)">
+        <div id="myDropdown" class="dropdown-content">
+            <a href="index.html" class="nav-link">View Cart (0)</a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="shop.html" class="nav-link">Shop</a>
+            <a href="features.html" class="nav-link">Features</a>
+            <a href="support.html" class="nav-link">Support</a>
+        </div>
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

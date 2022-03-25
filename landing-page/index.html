@@ -13,15 +13,18 @@
         <!-- Nav bar must be at the top -->
         <div id="header">
             <div><a href="index.html"><img src="assets/logo.png" id="header-img"/></a></div>
-            <div>
+            <div class="neg">
                 <nav id="nav-bar">
                     <ul>
                         <a href="index.html" class="nav-link"><li>Home</li></a>
                         <a href="shop.html" class="nav-link"> <li>Shop</li> </a>
                         <a href="features.html" class="nav-link"><li>Features</li></a>
-                        <a href="about.html" class="nav-link"><li>About</li></a>
+                        <a href="support.html" class="nav-link"><li>Support</li></a>
                     </ul>
-                    <!-- At least 3 nav links, should be working -->
+                    <div id="tray"> 
+                        <img src="assets/bag.png" id="bag">
+                        <img src="assets/search.png" id="search">
+                    </div>
                 </nav>
             </div>
         </div>
@@ -33,7 +36,7 @@
                     <h1>Adidas UltraBoost</h1>
                     <h6>Take off with responsiveness, touch down with control, ride with comfort.</h6>
                         <div id="shop1">
-                            <a href="shop.html">SHOP NOW 🡒</a>
+                            <a href="shop.html">SHOP NOW <img src="assets/arroww.png" id="arroww" /></a>
                         </div>
                 </div>
                 <div id="ultra">
@@ -48,7 +51,7 @@
                 <h1>Ultraboost DNA</h1>
                 <h6>AVAILABLE THROUGH THE ADIDAS APP. DOWNLOAD, REGISTER, PARTICIPATE.</h6>
                 <div id="shop">
-                    <a href="">Add to cart 🡒</a>
+                    <a href="">Add to cart <img src="assets/arrowb.png" id="arrowb" /></a>
                 </div>
             </div>
         </section>
@@ -57,7 +60,7 @@
                 <h1>Ultra4d  5</h1>
                 <h6>AVAILABLE THROUGH THE ADIDAS APP. DOWNLOAD, REGISTER, PARTICIPATE.</h6>
                 <div id="shop">
-                    <a href="">Add to cart 🡒</a>
+                    <a href="">Add to cart <img src="assets/arrowb.png" id="arrowb" /></a>
                 </div>
             </div>
             <img src="assets/ultra4d 5 shoes 2.png" class="shoes">
@@ -68,7 +71,7 @@
                 <h1>Ultraboost DNA</h1>
                 <h6>AVAILABLE THROUGH THE ADIDAS APP. DOWNLOAD, REGISTER, PARTICIPATE.</h6>
                 <div id="shop">
-                    <a href="">Add to cart 🡒</a>
+                    <a href="">Add to cart <img src="assets/arrowb.png" id="arrowb" /></a>
                 </div>
             </div>
         </section>
@@ -77,7 +80,7 @@
                 <h1>Ultra4d  5</h1>
                 <h6>AVAILABLE THROUGH THE ADIDAS APP. DOWNLOAD, REGISTER, PARTICIPATE.</h6>
                 <div id="shop">
-                    <a href="">Add to cart 🡒</a>
+                    <a href="">Add to cart <img src="assets/arrowb.png" id="arrowb" /></a>
                 </div>
             </div>
             <img src="assets/ultra4d 5 shoes.png" class="shoes">
@@ -94,6 +97,19 @@
             <p>All images are owned by © Adidas. Made by JC 🤘 </p>
         </section>
     </div>
+    <div id="hamburger" class="dropbtn" onclick="myFunction(this)">
+        <div id="myDropdown" class="dropdown-content">
+            <a href="index.html" class="nav-link">View Cart (0)</a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="shop.html" class="nav-link">Shop</a>
+            <a href="features.html" class="nav-link">Features</a>
+            <a href="support.html" class="nav-link">Support</a>
+        </div>
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
+
     <script src="script.js"></script>
 </body>
 </html>
