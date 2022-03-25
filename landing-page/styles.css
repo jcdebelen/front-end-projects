@@ -810,7 +810,7 @@ transform: rotate(45deg) translate(-8px, -8px) ;
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #575757;
+    background-color: #292929;
     min-width: 160px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
