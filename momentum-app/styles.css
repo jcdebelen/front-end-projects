@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:wght@200&family=Poppins&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    /* font-family: 'Bebas Neue', cursive;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; */
+    box-sizing: border-box;
+}
+
+body {
+    background: url(assets/bg1.jpg);
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px black;
+    min-height: 100vh;
+}
+
+
+#main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    height: 100vh;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1vmax;
+    animation: fadeIn 2s;
+}
+
+#name-label {
+    text-align: center;
+    font-weight: bold;
+    font-size: calc(16px + 2vw);
+}
+
+#name {
+  font-size: calc(16px + 1.5vw);
+}
+
+#subform {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    min-width: 80%;
+}
+
+#moment {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 1.5s;
+    min-height: 440px;
+    max-width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-bottom: 170px;
+}
+
+
+
+#maintime {
+    display: flex;
+    min-height: 150px;
+    margin-bottom: 2vh;
+    overflow: hidden;
+    margin-top: 2vh;
+}
+
+#ampm {
+    position: relative;
+    top: 0;
+    font-size: calc(20px + 1vw);
+    font-weight: bold;
+}
+
+#time {
+  font-size: calc(70px + 6vw);
+  margin-top: calc(-5px - 3vw);
+  margin-bottom: -4vw;
+}
+
+
+#greetings {
+    visibility: hidden;
+    font-size: calc(20px + 2.5vw);
+}
+
+input{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    box-sizing: border-box;
+}
+
+input:focus{
+    outline: none;
+}
+
+input[type=text] {
+    background: transparent;
+    font-size: calc(25px + 0.5vw);
+    text-align: center;
+    border: none;
+    border-bottom: solid;
+    border-color: white;
+    color: white;
+}
+
+input[type=submit] {
+    height: 5vh;
+    width: 8vh;
+    border-radius: 12px;
+    border-color: skyblue;
+    margin: 0 1vw;
+    color: rgb(255, 255, 255);
+    background-color: rgb(60, 197, 129);
+    transform: skew(-8deg);
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(8px + 0.5vw);
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+@keyframes fadeOut {
+    0% {opacity:1;}
+    100% {opacity:0;}
+  }
+
+@keyframes moveUp {
+    0% {bottom:0px;}
+    100% {bottom:8vh;}
+}
+
+@keyframes moveDown {
+    0% {bottom:8vh;}
+    100% {bottom:0px;}
+}
+
+
+#focus {
+  visibility: hidden;
+  z-index: 2;
+  position: relative;
+}
+
+#focus::-webkit-scrollbar {
+  display: none;
+}
+
+#focusgreet {
+  margin: 0 5px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  width: 100%;
+}
+
+#quotes {
+  font-size: calc(14px + 0.5vw);
+  text-align: center;
+  max-width: 70%;
+  margin-bottom: 4px;
+  visibility: hidden;
+  margin-left: 30px;
+  cursor: pointer;
+  font-style: italic;
+}
+
+#focussubmit, #listsubmit {
+  display: none;
+}
+
+#focusform {
+  position: relative;
+  font-size: calc(20px + 1vw);
+  text-align: center;
+  margin-top: 1vh;
+}
+
+#focuscon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type=checkbox] {
+  height: 1.6vmax;
+  width: 1.6vmax;
+  min-width: 12px;
+  min-height: 12px;
+  margin: 0 5px;
+}
+
+#welldone {
+  position: absolute;
+  top:40%;
+  visibility: hidden;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  font-size: calc(25px + 0.5vw);
+}
+
+#todo {
+  font-size: calc(25px + 0.5vw);
+  overflow: hidden;
+  display: none;
+}
+
+#list {
+  list-style: none;
+}
+
+.close {
+  height: 100%;
+  margin-left: auto;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+#listtitle {
+    display: none;
+    font-size: calc(20px + 1vw);
+}
+
+#list span:hover {
+  background-color: rgb(212, 64, 64);
+  transition: 1s;
+}
+
+#list li:hover {
+  background-color: rgba(255, 255, 255, 0.226);
+}
+
+#listinput {
+  font-size: calc(20px + 0.5vw);
+  width: 100%;
+  cursor: pointer;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+  font-style: italic;
+}
+
+#listinput:focus {
+  outline: solid;
+}
+
+#todo:hover {
+  border-bottom: solid;
+  border-width: 1px;
+  margin-bottom: -1px;
+  overflow-y: scroll;
+}
+
+#todo::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+#todo::-webkit-scrollbar-track {
+  border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#todo::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+}
+#todo::-webkit-scrollbar-thumb:hover{
+  background: rgba(255, 255, 255, 0.4);
+}
+#todo::-webkit-scrollbar-thumb:active{
+  background: rgba(255, 255, 255, 0.9);
+}
+
+
+#list li {
+  font-size: calc(20px + 0.5vw);
+  display: flex;
+  align-items: center;
+}
+
+#ref {
+  height: 30px;
+  width: 30px;
+  visibility: hidden;
+}
+
+#ref:hover {
+  visibility: visible;
+}
+
+#quotes:hover + #ref {
+  visibility: visible;
+  transition: 1s;
+  animation: fadeIn 1s;
+}
+
+#end {
+  position: absolute;
+  bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  display: inline-block;
+}
+
+
+#quoteinput {
+  background-color: transparent;
+  font-size: calc(20px + 0.5vw);
+  resize: none;
+  border: none;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  outline: none;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+#quoteform {
+  background-color: rgba(255, 255, 255, 0.205);
+  border-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-bottom: 10px; */
+  display: none;
+  width: 100%;
+}
+
+
+#quoteinput::placeholder { 
+  color: rgba(255, 255, 255, 0.541);
+
+}
+
+
+/* WELL EFFIN DONE! */
+
+@keyframes typing {
+  from {text-align: center; width: 0 }
+  to {text-align: center; width: 100% }
+}
+
+#black {
+  height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  visibility: hidden;
+  z-index: -1;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  #quotes {
+    max-width: 95%;;
+    font-size: 12px;
+  }
+
+  #moment {
+    width: 300px;
+    /* margin-top: -100px; */
+  }
+
+  #quoteinput {
+    font-size: 16px;
+  }
+
+  #ampm {
+    display: none;
+  }
+
+  input[type=text] {
+    font-size: 20px;
+  }
+
+  #maintime {
+    margin-bottom: 0;
+    min-height: 130px;
+  }
+}
+
+#user {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  align-self: flex-end;
+  text-align: right;
+  cursor: pointer;
+  font-size: calc(16px + 1vw);
+  font-family: 'Roboto', sans-serif;
+  visibility: hidden;
+  margin: 0 5px 5px 0;
+}
+
+#change {
+  background-color: grey;
+  padding: 5px;
+  /* visibility: hidden; */
+  font-family: 'Poppins', sans-serif;
+  font-size: calc(16px);
+  z-index: 2;
+  display: none;
+}
+
+.pyro {
+    display: none;
+}
+
+.pyro > .before, .pyro > .after {
+    z-index: 999;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: -120px -218.66667px blue, 248px -16.66667px #00ff84, 190px 16.33333px #002bff, -113px -308.66667px #ff009d, -109px -287.66667px #ffb300, -50px -313.66667px #ff006e, 226px -31.66667px #ff4000, 180px -351.66667px #ff00d0, -12px -338.66667px #00f6ff, 220px -388.66667px #99ff00, -69px -27.66667px #ff0400, -111px -339.66667px #6200ff, 155px -237.66667px #00ddff, -152px -380.66667px #00ffd0, -50px -37.66667px #00ffdd, -95px -175.66667px #a6ff00, -88px 10.33333px #0d00ff, 112px -309.66667px #005eff, 69px -415.66667px #ff00a6, 168px -100.66667px #ff004c, -244px 24.33333px #ff6600, 97px -325.66667px #ff0066, -211px -182.66667px #00ffa2, 236px -126.66667px #b700ff, 140px -196.66667px #9000ff, 125px -175.66667px #00bbff, 118px -381.66667px #ff002f, 144px -111.66667px #ffae00, 36px -78.66667px #f600ff, -63px -196.66667px #c800ff, -218px -227.66667px #d4ff00, -134px -377.66667px #ea00ff, -36px -412.66667px #ff00d4, 209px -106.66667px #00fff2, 91px -278.66667px #000dff, -22px -191.66667px #9dff00, 139px -392.66667px #a6ff00, 56px -2.66667px #0099ff, -156px -276.66667px #ea00ff, -163px -233.66667px #00fffb, -238px -346.66667px #00ff73, 62px -363.66667px #0088ff, 244px -170.66667px #0062ff, 224px -142.66667px #b300ff, 141px -208.66667px #9000ff, 211px -285.66667px #ff6600, 181px -128.66667px #1e00ff, 90px -123.66667px #c800ff, 189px 70.33333px #00ffc8, -18px -383.66667px #00ff33, 100px -6.66667px #ff008c;
+    -moz-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    -webkit-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    -o-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    -ms-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards; }
+  
+  .pyro > .after {
+    -moz-animation-delay: 1.25s, 1.25s, 1.25s;
+    -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
+    -o-animation-delay: 1.25s, 1.25s, 1.25s;
+    -ms-animation-delay: 1.25s, 1.25s, 1.25s;
+    animation-delay: 1.25s, 1.25s, 1.25s;
+    -moz-animation-duration: 1.25s, 1.25s, 6.25s;
+    -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
+    -o-animation-duration: 1.25s, 1.25s, 6.25s;
+    -ms-animation-duration: 1.25s, 1.25s, 6.25s;
+    animation-duration: 1.25s, 1.25s, 6.25s; }
+  
+  @-webkit-keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @-moz-keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @-o-keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @-ms-keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @keyframes bang {
+    from {
+      box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
+  @-webkit-keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @-moz-keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @-o-keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @-ms-keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @keyframes gravity {
+    to {
+      transform: translateY(200px);
+      -moz-transform: translateY(200px);
+      -webkit-transform: translateY(200px);
+      -o-transform: translateY(200px);
+      -ms-transform: translateY(200px);
+      opacity: 0; } }
+  @-webkit-keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  @-moz-keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  @-o-keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  @-ms-keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  @keyframes position {
+    0%, 19.9% {
+      margin-top: 10%;
+      margin-left: 40%; }
+  
+    20%, 39.9% {
+      margin-top: 40%;
+      margin-left: 30%; }
+  
+    40%, 59.9% {
+      margin-top: 20%;
+      margin-left: 70%; }
+  
+    60%, 79.9% {
+      margin-top: 30%;
+      margin-left: 20%; }
+  
+    80%, 99.9% {
+      margin-top: 30%;
+      margin-left: 80%; } }
+  

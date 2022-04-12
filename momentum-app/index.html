@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/majinbuu.png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Momentum</title>
+</head>
+<body id="body">
+    <div id="main">
+        <section id="welcome">
+            <form id="form">
+                <h1 id="name-label">Welcome!<br> Please enter your name.</h1>
+                <div id="subform">
+                    <input type="text" id="name" required>
+                    <input type="submit" id="submit">
+                </div>
+            </form>
+        </section>
+        <section id="moment">
+            <div id="maintime">
+                <h1 id="time"></h1><span id="ampm"></span>
+            </div>
+            <h1 id="greetings"></h1>
+            <h5 id="listtitle">To do list</h5>
+            <div id="todo">
+                <ul id="list"></ul>
+                <form id="listform">
+                    <input type="text" id="listinput" placeholder="Add to do list"required>
+                    <input type="submit" id="listsubmit">
+                </form>
+            </div>
+            <div id="focus">
+                <form id="focusform">
+                    <h5 id="focusgreet">What's your main focus for today?</h5>
+                    <input type="text" id="focusinput" required>
+                    <input type="submit" id="focussubmit">
+                    <div id="focuscon">
+                        <input type="checkbox" id="focuscheck" onclick="strike()">
+                        <label id="mainfocus"></label>
+                    </div>
+                </form>
+            </div>
+            <div id="welldone">Job well done!</div>
+        </section>
+        <section id="end">
+            <form id="quoteform">
+                <textarea rows="2" cols="80" id="quoteinput" placeholder="Add quote here"></textarea>
+                <input type="submit" id="quotesubmit">
+            </form>
+                <footer ><span id="quotes"></span><img src="assets/refresh.png" id="ref" /></footer>      
+        </section>
+        <div id="user"><p id="change">Change User</p></div>
+        <div class="pyro">
+            <div class="before"></div>
+            <div class="after"></div>
+        </div>
+        <div id="black"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
