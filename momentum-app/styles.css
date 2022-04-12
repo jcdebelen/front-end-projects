@@ -93,6 +93,7 @@ body {
 #greetings {
     visibility: hidden;
     font-size: calc(20px + 2.5vw);
+    text-align: center;
 }
 
 input{
