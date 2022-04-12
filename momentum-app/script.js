@@ -101,11 +101,11 @@ setInterval(displayTimeG, 1000)
 
 function animate () {
     setTimeout(myGreetings, 500)
-    setTimeout(myGreetingsOut, 4000)
-    setTimeout(myGreetingsOut2, 5500)
-    setTimeout(myFocus, 2000);
-    setTimeout(myFocus2, 4000);
-    setTimeout(myFocus3, 3500);
+    setTimeout(myGreetingsOut, 3500)
+    setTimeout(myGreetingsOut2, 5000)
+    setTimeout(myFocus, 2500);
+    setTimeout(myFocus2, 4500);
+    setTimeout(myFocus3, 3800);
     setTimeout(displayUser, 6500);
     setTimeout(changeQuote, 6000)
 }
