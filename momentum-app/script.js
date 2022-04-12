@@ -101,10 +101,10 @@ setInterval(displayTimeG, 1000)
 
 function animate () {
     setTimeout(myGreetings, 500)
-    setTimeout(myGreetingsOut, 5000)
-    setTimeout(myGreetingsOut2, 6500)
+    setTimeout(myGreetingsOut, 4000)
+    setTimeout(myGreetingsOut2, 5500)
     setTimeout(myFocus, 2000);
-    setTimeout(myFocus2, 4500);
+    setTimeout(myFocus2, 4000);
     setTimeout(myFocus3, 3500);
     setTimeout(displayUser, 6500);
     setTimeout(changeQuote, 6000)
@@ -307,12 +307,8 @@ dom.getElementById("listsubmit").addEventListener('click', e => {
         dom.getElementById("listtitle").style.display = "block";
         dom.getElementById("listtitle").style.animation = "fadeIn 1.5s";
         const listelem = dom.createElement('li')
-        const listcheck = dom.createElement('input')
         dom.getElementById('list').append(listelem);
-        listelem.append(listcheck);
         listelem.style.animation = "fadeIn 1s";
-        listcheck.setAttribute('type','checkbox');
-        listcheck.className = "cb";
         listelem.innerHTML += " " + list;    
         const span = document.createElement("SPAN");
         const txt = document.createTextNode("\u00D7");
@@ -373,3 +369,12 @@ dom.getElementById("change").addEventListener('click',  function() {
     localStorage.removeItem("username");
     location.reload();
 });
+
+
+// Add a "checked" symbol when clicking on a list item
+var todolist = document.querySelector('ul');
+todolist.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
