@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+
+body {
+    background-color: #39AEA9;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(26, 26, 26);
+    font-family: 'Poppins', sans-serif;
+}
+
+#maingame {
+    text-align: center;
+    font-size: calc(14px + 1vw);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+#title {
+    text-shadow: 1px 1px white;
+    margin-bottom: 30px;
+}
+
+#player {
+    margin-bottom: 10px;
+}
+
+
+#container {
+    border-style: solid;
+    border-width: 2px;
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cell {
+    height: calc(100%/3);
+    width: calc(100%/3);
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(14px + 14vmin);
+    cursor: pointer;
+    border-color: black;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.cell:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+
+#start {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 90vh;
+    font-size: calc(14px + 1.6vw);
+    text-align: center;
+}
+
+#start>* {
+    margin: 0 3vw;
+}
+
+#prompt {
+    text-align: center;
+}
+
+#prompt * {
+    margin: 2vh 0;
+}
+
+#choose {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20vh;
+}
+
+#O, #X {
+    min-height: 20px;
+    min-width: 20px;
+    height: 10vmax;
+    width: 10vmax;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 20px;
+    text-shadow: 1px 1px white;
+    font-size: calc(20px + 3vw);
+    font-family: 'Permanent Marker', cursive;
+    padding: 1vmax;
+}
+
+#O:hover, #X:hover{
+    position: relative;
+    bottom: 10px;
+    animation: moveUp .5s;
+}
+
+#O {
+    background-color: #e5efc1;
+}
+
+#X {
+    background-color: #a2d5ab;
+}
+
+
+/* #line {
+    height: 2vmin;
+    width: 60vmin;
+    background-color: black;
+    position: absolute;
+    top: 8vmin;
+    left: -18vmin; 
+    z-index: 1;
+    transform: rotate(45deg);
+} */
+
+@keyframes moveUp {
+    from {bottom: 0px;}
+    to {bottom: 10px;}
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes breath {
+    0% {}
+    50% {text-shadow: 1px 1px rgb(221, 218, 28);}
+    100% {}
+}
+
+#turn {
+    animation: breath 5s;
+    animation-iteration-count: infinite;
+}
+
+#controls {
+    width: 80%;
+    visibility: hidden;
+}
+
+#controls>* {
+    margin: 1.5vh 0;
+}
+
+#history {
+    display: flex;
+    justify-content:space-between;
+}
+
+.button {
+    min-width: 25%;
+    padding: 0 1vh;
+    min-height: 20px;
+    height: 4vh;    
+    font-size: calc(8px + 0.6vw);
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#prev {
+    background-color: #008CBA;
+    transition: 0.4s;
+    color: white;
+    min-width: 55px;
+    width: 25%;
+}
+
+#next {
+    background-color: #4CAF50;
+    transition: 0.4s;
+    color: white;
+}
+
+#reset {
+    margin-top: 3vh;
+    width: 30%;
+    height: 40px;    
+    font-size: 20px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(8px + 0.6vw);
+}
+
+#reset:hover {
+    color: white;
+    background-color: rgb(114, 114, 114);
+    border-color: white;
+    transition: 0.4s;
+}
+
+#movetitle {
+    color: white;
+}
+
+#movenum {
+    color: rgb(26, 26, 26);
+}
+
+@media only screen and (orientation: portrait) {
+    #movenum {
+        margin: 0 1vh;
+    }
+
+    #history {
+        justify-content:space-between;
+    }
+
+}
