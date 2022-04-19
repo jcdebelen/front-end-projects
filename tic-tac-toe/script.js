@@ -42,10 +42,7 @@ for (let i=0;i<cells.length;i++) {
             moves.push(structuredClone(board));
             dom.getElementById('turn').innerHTML = ' ' + player + ' ';
             checkWin();  
-            i=null;x=null;
-            if (moves.length == 9) {
-                    playerW(2);
-            };
+            i=null;x=null;;
         }
     })
 }
@@ -178,6 +175,9 @@ function checkWin() {
     }
     else if (board[0][2] === 'X' && board[1][1] ==='X' && board[2][0] === 'X') {
         playerW(1);
+    }
+    else if (moves.length == 9) {
+        playerW(2);
     }
 }
 
