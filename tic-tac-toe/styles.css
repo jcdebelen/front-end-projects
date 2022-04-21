@@ -1,129 +1,177 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins&family=Urbanist:wght@500&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    z-index: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 0;
 }
 
+/* font-family: 'Permanent Marker', cursive;
+font-family: 'Poppins', sans-serif;
+ */
+
 body {
-    background-color: #39AEA9;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(26, 26, 26);
-    font-family: 'Poppins', sans-serif;
+  background-color: #39aea9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(41, 41, 41);
+  font-family: "Poppins", sans-serif;
 }
 
 #maingame {
-    text-align: center;
-    font-size: calc(14px + 1vw);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: calc(14px + 1vw);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-
 #title {
-    text-shadow: 1px 1px white;
-    margin-bottom: 30px;
+  text-shadow: 1px 1px white;
+  margin-bottom: 30px;
 }
 
 #player {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  visibility: hidden;
+  font-size: calc(10px + 1.5vw);
 }
 
+#cover {
+  position: relative;
+  overflow: hidden;
+}
 
 #container {
-    border-style: solid;
-    border-width: 0.2vmin;
-    height: 60vmin;
-    width: 60vmin;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .cell {
-    height: calc(100%/3);
-    width: calc(100%/3);
-    box-sizing: border-box;
-    border-style: solid;
-    border-width: 0.2vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: calc(14px + 14vmin);
-    cursor: pointer;
-    border-color: black;
-    font-family: 'Permanent Marker', cursive;
+  height: calc(100% / 3);
+  width: calc(100% / 3);
+  box-sizing: border-box;
+  border-width: 0.7vmin;
+  border-color: rgb(41, 41, 41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(14px + 14vmin);
+  cursor: pointer;
+  font-family: "Urbanist", sans-serif;
 }
 
 .cell:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: 0.2s;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+
+.cell:nth-of-type(1) {
+  border-style: none solid solid none;
+}
+
+.cell:nth-of-type(2) {
+  border-style: none solid solid solid;
+}
+
+.cell:nth-of-type(3) {
+  border-style: none none solid solid;
+}
+
+.cell:nth-of-type(4) {
+  border-style: solid solid solid none;
+}
+
+.cell:nth-of-type(5) {
+  border-style: solid;
+}
+
+.cell:nth-of-type(6) {
+  border-style: solid none solid solid;
+}
+
+.cell:nth-of-type(7) {
+  border-style: solid solid none none;
+}
+
+.cell:nth-of-type(8) {
+  border-style: solid solid none solid;
+}
+
+.cell:nth-of-type(9) {
+  border-style: solid none none solid;
 }
 
 #start {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 90vh;
-    font-size: calc(14px + 1.6vw);
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90vh;
+  font-size: calc(14px + 1.6vw);
+  text-align: center;
 }
 
-#start>* {
-    margin: 0 3vw;
+#start > * {
+  margin: 0 3vw;
 }
 
 #prompt {
-    text-align: center;
+  text-align: center;
 }
 
 #prompt * {
-    margin: 2vh 0;
+  margin: 2vh 0;
 }
 
 #choose {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20vh;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20vh;
 }
 
-#O, #X {
-    min-height: 20px;
-    min-width: 20px;
-    height: 10vmax;
-    width: 10vmax;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 20px;
-    margin-top: 20px;
-    text-shadow: 1px 1px white;
-    font-size: calc(20px + 3vw);
-    font-family: 'Permanent Marker', cursive;
-    padding: 1vmax;
+#O,
+#X {
+  min-height: 20px;
+  min-width: 20px;
+  height: 10vmax;
+  width: 10vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-shadow: 1px 1px white;
+  font-size: calc(20px + 3vw);
+  font-family: "Urbanist", sans-serif;
+  padding: 1vmax;
 }
 
-#O:hover, #X:hover{
-    position: relative;
-    bottom: 10px;
-    animation: moveUp .5s;
+#O:hover,
+#X:hover {
+  position: relative;
+  bottom: 10px;
+  animation: moveUp 0.5s;
 }
 
 #O {
-    background-color: #e5efc1;
+  background-color: #e5efc1;
 }
 
 #X {
-    background-color: #a2d5ab;
+  background-color: #a2d5ab;
 }
-
 
 /* #line {
     height: 2vmin;
@@ -137,96 +185,177 @@ body {
 } */
 
 @keyframes moveUp {
-    from {bottom: 0px;}
-    to {bottom: 10px;}
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 10px;
+  }
 }
 
 @keyframes fadeIn {
-    0% {opacity:0;}
-    100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes breath {
-    0% {}
-    50% {text-shadow: 1px 1px rgb(221, 218, 28);}
-    100% {}
+  0% {
+  }
+  50% {
+    text-shadow: 1px 1px rgb(221, 218, 28);
+  }
+  100% {
+  }
+}
+
+@keyframes spread {
+  from {
+    width: 20vmin;
+    height: 20vmin;
+  }
+  to {
+    width: 60vmin;
+    height: 60vmin;
+  }
 }
 
 #turn {
-    animation: breath 5s;
-    animation-iteration-count: infinite;
+  animation: breath 5s;
+  animation-iteration-count: infinite;
+  font-size: larger;
 }
 
 #controls {
-    width: 80%;
-    visibility: hidden;
+  width: 100%;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-#controls>* {
-    margin: 1.5vh 0;
+#controls > * {
+  margin: 0.5vh 0;
 }
 
 #history {
-    display: flex;
-    justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .button {
-    min-width: 25%;
-    padding: 0 1vh;
-    min-height: 20px;
-    height: 4vh;    
-    font-size: calc(8px + 0.6vw);
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
+  min-width: 15%;
+  padding: 0 1vh;
+  min-height: 20px;
+  height: 4vh;
+  font-size: calc(8px + 0.6vw);
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+button img {
+  height: 80%;
 }
 
 #prev {
-    background-color: #008CBA;
-    transition: 0.4s;
-    color: white;
-    min-width: 65px;
-    width: 25%;
+  background-color: #008bba81;
+  transition: 0.4s;
+  min-width: 85px;
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 10px;
+  color: white;
+}
+
+#prev:hover {
+  background-color: #008cba;
 }
 
 #next {
-    background-color: #4CAF50;
-    transition: 0.4s;
-    color: white;
+  background-color: #6fc77270;
+  transition: 0.4s;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 10px;
+}
+
+#next:hover {
+  background-color: #6fc772;
+}
+
+#newgame {
+  width: 30%;
+  height: 40px;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: calc(8px + 0.6vw);
+  align-self: center;
+}
+
+#newgame:hover {
+  background-color: rgb(202, 202, 202);
+  transition: 0.4s;
 }
 
 #reset {
-    margin-top: 3vh;
-    width: 30%;
-    height: 40px;    
-    font-size: 20px;
-    border-radius: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: calc(8px + 0.6vw);
+  width: 30%;
+  height: 40px;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: calc(8px + 0.6vw);
+  align-self: center;
+  background-color: transparent;
 }
 
 #reset:hover {
-    color: white;
-    background-color: rgb(114, 114, 114);
-    border-color: white;
-    transition: 0.4s;
+  background-color: rgb(197, 70, 70);
+  transition: 0.4s;
 }
 
 #movetitle {
-    color: white;
-}
-
-#movenum {
-    color: rgb(26, 26, 26);
+  color: white;
 }
 
 @media only screen and (orientation: portrait) {
-    #movenum {
-        margin: 0 1vh;
-    }
+  #movenum {
+    margin: 0 1vh;
+  }
 
-    #history {
-        justify-content:space-between;
-    }
+  #history {
+    justify-content: space-between;
+  }
+}
 
+#score {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  visibility: hidden;
+}
+
+#oScorediv {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#xScorediv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#score div {
+  width: 15vw;
+  font-size: calc(10px + 1.8vw);
+  min-width: 70px;
+}
+
+#congrats {
+  display: none;
 }

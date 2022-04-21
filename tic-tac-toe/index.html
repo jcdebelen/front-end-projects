@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/tictactoe.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="assets/tictactoe.png" />
     <title>Tic Tac Toe</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="main">
-        <div id="maingame">
-            <h1 id="title">Tic Tac Toe</h1>
-            <h2 id="player">Player<span id="turn"></span>turn</h2>
-            <h3 id="error"></h3>
-            <div id="container">
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <div class="cell"></div>
-                <!-- <hr id="line"> -->
-            </div>
-            <div id="controls">
-                <div id="history">
-                    <button class="button" id="prev">Previous</button>
-                    <h6 id="movenum"></h6>
-                    <button class="button" id="next">Next</button>
-                </div>
-                <button id="reset">New Game</button>
-            </div>
+      <div id="maingame">
+        <!-- <h1 id="title">Tic Tac Toe</h1> -->
+        <div id="score">
+          <div id="oScorediv">
+            <h2>O - <span id="oScore">0</span></h2>
+          </div>
+          <div id="xScorediv">
+            <h2>X - <span id="xScore">0</span></h2>
+          </div>
         </div>
+        <h2 id="player"><span id="turn"></span>turn</h2>
+        <h3 id="congrats"></h3>
+        <div id="cover">
+          <div id="container">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <!-- <hr id="line"> -->
+          </div>
+        </div>
+        <div id="controls">
+          <div id="history">
+            <button class="button" id="prev">
+              <img src="assets/prev.png" /> Previous
+            </button>
+            <button class="button" id="next">
+              Next<img src="assets/next.png" />
+            </button>
+          </div>
+          <button id="newgame">New Game</button>
+          <button id="reset">Reset Game</button>
+        </div>
+      </div>
     </div>
     <div id="start">
-        <h1 id="greeting">Let's play Tic Tac Toe!</h1>
-        <div id="prompt">
-            <h2>Which side will play first?</h2>
-            <div id="choose">
-                <div id="O"><h2>O</h2></div>
-                <div id="X"><h2>X</h2></div>  
-            </div>
+      <h1 id="greeting">Let's play Tic Tac Toe!</h1>
+      <div id="prompt">
+        <h2>Which side will play first?</h2>
+        <div id="choose">
+          <div id="O"><h2>O</h2></div>
+          <div id="X"><h2>X</h2></div>
         </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
