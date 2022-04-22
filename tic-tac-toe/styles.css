@@ -163,17 +163,6 @@ body {
   background-color: transparent;
 }
 
-/* #line {
-    height: 2vmin;
-    width: 60vmin;
-    background-color: black;
-    position: absolute;
-    top: 8vmin;
-    left: -18vmin; 
-    z-index: 1;
-    transform: rotate(45deg);
-} */
-
 @keyframes moveUp {
   from {
     bottom: 0px;
