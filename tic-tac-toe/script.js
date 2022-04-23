@@ -191,7 +191,7 @@ function sayCongrats() {
   dom.getElementById("congrats").style.display = "block";
   dom.getElementById("congrats").style.visibility = "hidden";
   dom.getElementById("congrats").style.visibility = "visible";
-  dom.getElementById("congrats").style.animation = "spreadOutIn 1.5s";
+  dom.getElementById("congrats").style.animation = "spreadOutIn 3s";
 }
 
 function showControls() {
