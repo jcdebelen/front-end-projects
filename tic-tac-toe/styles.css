@@ -209,10 +209,10 @@ body {
 
 @keyframes spreadOutIn {
   0% {
-    transform: scale(3.5);
+    transform: scale(2.5);
   }
   50% {
-    transform: scale(2.5);
+    transform: scale(2);
   }
   100% {
     transform: scale(1);
@@ -356,6 +356,8 @@ button img {
 #player {
   margin-bottom: 5px;
   font-size: calc(20px + 2vmin);
+  display: flex;
+  align-items: baseline;
 }
 
 #congrats {
@@ -423,7 +425,7 @@ button img {
 }
 
 .line {
-  background-color: #e5efc1;
+  background-color: #557b83;
   position: absolute;
   z-index: 2;
   visibility: visible;

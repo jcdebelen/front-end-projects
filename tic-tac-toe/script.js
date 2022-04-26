@@ -85,7 +85,7 @@ function playerColor() {
 function xSpanColor() {
   playerTurnDisplay = "✖";
   dom.getElementById("oScorediv").style.borderStyle = "none";
-  dom.getElementById("turn").style.color = "rgb(41, 41, 41)";
+  dom.getElementById("turn").style.color = "rgb(75, 75, 75)";
   dom.getElementById("turn").style.textShadow = "2px 2px white";
   dom.getElementById("xScorediv").style.borderStyle = "none none solid none";
   dom.getElementById("turn").innerHTML = " " + playerTurnDisplay + " ";
