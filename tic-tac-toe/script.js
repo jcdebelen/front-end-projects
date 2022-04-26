@@ -11,9 +11,6 @@ const cells = dom.getElementsByClassName("cell");
 function reset() {
   dom.getElementById("cover").style.animation = "none";
   dom.getElementById("controls").style.visibility = "hidden";
-  dom.getElementById("player").style.display = "block";
-  dom.getElementById("player").style.visibility = "hidden";
-  dom.getElementById("player").style.animation = "none";
   dom.getElementById("congrats").style.display = "none";
   hideLines();
   board = [
@@ -34,8 +31,6 @@ reset();
 //Animate Board
 function animateBoard() {
   dom.getElementById("cover").style.animation = "spread 0.4s";
-  dom.getElementById("cover").style.height = "60vmin";
-  dom.getElementById("cover").style.width = "60vmin";
 }
 
 //div Player
@@ -45,17 +40,17 @@ let shapeX = '<div class="shapeX"></div>';
 
 //Select player O
 dom.getElementById("O").addEventListener("click", function () {
+  select();
   player = "O";
   playerShape = shapeO;
   oSpanColor();
-  select();
 });
 //Select player X
 dom.getElementById("X").addEventListener("click", function () {
+  select();
   player = "X";
   playerShape = shapeX;
   xSpanColor();
-  select();
 });
 
 function select() {
@@ -65,38 +60,28 @@ function select() {
 }
 
 function displayTurn() {
+  dom.getElementById("turn").innerHTML = " " + playerTurnDisplay + " ";
   dom.getElementById("player").style.display = "block";
   dom.getElementById("player").style.visibility = "visible";
-  dom.getElementById("player").style.animation = "fadeIn .5s";
-  dom.getElementById("turn").innerHTML = " " + playerTurnDisplay + " ";
   dom.getElementById("score").style.visibility = "visible";
   dom.getElementById("score").style.animation = "fadeIn .5s";
-}
-
-//Change Turn Design Color
-function playerColor() {
-  if (player === "O") {
-    oSpanColor();
-  } else if (player === "X") {
-    xSpanColor();
-  }
 }
 
 function xSpanColor() {
   playerTurnDisplay = "✖";
   dom.getElementById("oScorediv").style.borderStyle = "none";
+  dom.getElementById("xScorediv").style.borderStyle = "none none solid none";
   dom.getElementById("turn").style.color = "rgb(75, 75, 75)";
   dom.getElementById("turn").style.textShadow = "2px 2px white";
-  dom.getElementById("xScorediv").style.borderStyle = "none none solid none";
   dom.getElementById("turn").innerHTML = " " + playerTurnDisplay + " ";
 }
 
 function oSpanColor() {
   playerTurnDisplay = "O";
   dom.getElementById("xScorediv").style.borderStyle = "none";
+  dom.getElementById("oScorediv").style.borderStyle = "none none solid none";
   dom.getElementById("turn").style.color = "white";
   dom.getElementById("turn").style.textShadow = "2px 2px black";
-  dom.getElementById("oScorediv").style.borderStyle = "none none solid none";
   dom.getElementById("turn").innerHTML = " " + playerTurnDisplay + " ";
 }
 
@@ -107,10 +92,9 @@ for (let i = 0; i < cells.length; i++) {
       if (cells[i].innerHTML === "") {
         cells[i].innerHTML = playerShape;
         board[Math.floor(i / 3)][i % 3] = player;
-        changeplayer();
-        setTimeout(playerColor, 200);
         moves.push(structuredClone(board));
         checkWinV2();
+        changeplayer();
       }
     }
   });
@@ -121,9 +105,11 @@ function changeplayer() {
   if (player === "O") {
     player = "X";
     playerShape = shapeX;
+    setTimeout(xSpanColor, 200);
   } else if (player === "X") {
     player = "O";
     playerShape = shapeO;
+    setTimeout(oSpanColor, 200);
   }
 }
 
@@ -195,6 +181,7 @@ function playerW(input) {
     dom.getElementById("xScore").innerHTML = xscore;
     setTimeout(sayCongrats, 600);
   } else if (input === 0) {
+    dom.getElementById("congrats").style.color = "white";
     dom.getElementById("congrats").innerHTML = "DRAW!";
     sayCongrats();
   }
@@ -206,8 +193,6 @@ function playerW(input) {
 function sayCongrats() {
   dom.getElementById("player").style.display = "none";
   dom.getElementById("congrats").style.display = "flex";
-  dom.getElementById("congrats").style.visibility = "visible";
-  dom.getElementById("congrats").style.animation = "spreadOutIn 2s";
 }
 
 function showControls() {
@@ -251,7 +236,7 @@ function disableButton() {
   }
 }
 
-//Display to HTML
+//Update HTML Cells
 function updateCells() {
   for (let a = 0; a < 3; a++) {
     for (let b = 0; b < 3; b++) {
@@ -270,7 +255,7 @@ function updateCells() {
 
 //Continue game
 dom.getElementById("newgame").addEventListener("click", function () {
-  dom.getElementById("controls").style.animation = "fadeOut 1s";
+  dom.getElementById("controls").style.animation = "fadeOut 0.8s";
   setTimeout(reset, 350);
 });
 
