@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div id="main">
+      <nav id="nav">
+        <ul>
+          <a href="home.html"><li>Home</li></a>
+          <a href="register.html"><li>Register</li></a>
+          <li>Contact Us</li>
+          <a href="login.html"><li>Login</li></a>
+        </ul>
+      </nav>
+      <section id="register">
+        <div id="title">
+          <h1>Sign Up</h1>
+          <p>It's free and always will be.</p>
+        </div>
+        <form id="form">
+          <div class="formcon">
+            <input
+              type="email"
+              id="email"
+              placeholder="E-mail"
+              autocomplete="current-password"
+              required
+            />
+            <label for="email" id="email-label" class="label"
+              >E-mail address</label
+            >
+          </div>
+          <div class="formcon">
+            <input type="text" id="fname" placeholder="First Name" required />
+            <label for="fname" id="fname-label" class="label">First Name</label>
+          </div>
+          <div class="formcon">
+            <input type="text" id="lname" placeholder="Last Name" required />
+            <label for="lname" id="lname-label" class="label">Last Name</label>
+          </div>
+
+          <div class="formcon">
+            <input
+              type="password"
+              id="pword"
+              placeholder="Password"
+              autocomplete="current-password"
+              required
+            />
+            <label for="password" id="pword-label" class="label"
+              >Password</label
+            >
+          </div>
+          <input type="submit" id="submit" class="submit" />
+        </form>
+      </section>
+    </div>
+    <script src="/scripts/register.js"></script>
+  </body>
+</html>
