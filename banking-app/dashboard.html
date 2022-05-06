@@ -17,21 +17,64 @@
         </ul>
       </nav>
       <section id="dashboard">
-        <div id="userCon">
-          <h1>Welcome, <span id="user"></span>!</h1>
+        <div id="info">
+          <div id="userCon">
+            <h1>Welcome, <span id="user"></span>!</h1>
+          </div>
+          <div id="balanceCon">
+            <h1>Balance: ₱ <span id="balance"></span></h1>
+          </div>
+          <div id="depositCon" class="buttonCon">
+            <button id="deposit" class="button">Deposit</button>
+          </div>
+          <div id="withdrawCon" class="buttonCon">
+            <button id="withdraw" class="button">Withdraw</button>
+          </div>
+          <div id="transferCon" class="buttonCon">
+            <button id="transfer" class="button">Transfer</button>
+          </div>
         </div>
-        <div id="balanceCon">
-          <h1>Balance: ₱ <span id="balance"></span></h1>
+        <div id="expenses">
+          <div id="expensesCon">
+            <h1 id="expensestitle">Expenses</h1>
+            <table id="expensestable">
+              <tbody id="expensestbody">
+                <tr>
+                  <th>Expense Name</th>
+                  </th>
+                  <th>Cost</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="expensesCon2">
+            <button id="expensebutton">Add Expense</button>
+          </div>
         </div>
-        <div id="depositCon" class="buttonCon">
-          <button id="deposit" class="button">Deposit</button>
-        </div>
-        <div id="withdrawCon" class="buttonCon">
-          <button id="withdraw" class="button">Withdraw</button>
-        </div>
-        <div id="transferCon" class="buttonCon">
-          <button id="transfer" class="button">Transfer</button>
-        </div>
+      </section>
+      <section id="userlist">
+        <table id="usertable">
+          <tbody id="usertbody">
+            <tr id="tablehead">
+              <th class="header">Email</th>
+              <th class="header">First Name</th>
+              <th class="header">Last Name</th>
+              <th class="header">Balance</th>
+              <th class="header" id="creation">Created On</th>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section id="transaction">
+        <table id="transacttable">
+          <tbody id="transacttbody">
+            <tr id="tablehead">
+              <th class="header" id="date">Date & Time</th>
+              <th class="header">Transaction</th>
+              <th class="header">Amount</th>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </div>
     <script src="scripts/dashboard.js"></script>

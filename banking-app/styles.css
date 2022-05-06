@@ -12,7 +12,6 @@
 #nav {
   width: 100%;
   position: fixed;
-  z-index: 999;
 }
 
 ul {
@@ -27,6 +26,7 @@ li {
   padding: 5px;
   border: 1px solid;
   border-radius: 7px;
+  z-index: 999;
 }
 
 #register {
@@ -84,7 +84,9 @@ input::placeholder {
 #lname:focus-within + #lname-label,
 #lname:not(:placeholder-shown) + #lname-label,
 #pword:focus-within + #pword-label,
-#pword:not(:placeholder-shown) + #pword-label {
+#pword:not(:placeholder-shown) + #pword-label,
+#balance:focus-within + #balance-label,
+#balance:not(:placeholder-shown) + #balance-label {
   transform: translateY(-24px) scale(0.8);
   background-color: white;
   color: rgb(41, 41, 41);
@@ -116,6 +118,13 @@ input::placeholder {
   justify-content: center;
 }
 
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #userCon {
   margin: 10px;
 }
@@ -128,4 +137,64 @@ input::placeholder {
 
 #logout {
   cursor: pointer;
+}
+
+#userlist,
+#transaction {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#usertable,
+#transacttable {
+  border-collapse: collapse;
+  width: 70%;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  table-layout: fixed;
+}
+
+#usertable th,
+#transacttable th,
+td {
+  border: 1px solid;
+  text-align: center;
+}
+
+#creation {
+  width: 160px;
+}
+
+#expenses {
+  min-height: 200px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+}
+#expensesCon {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#expensestable {
+  border-collapse: collapse;
+  width: 90%;
+  background-color: white;
+  /* table-layout: fixed; */
+}
+
+#expensestable th,
+#expensestable td {
+  text-align: left;
+  padding: 5px;
 }

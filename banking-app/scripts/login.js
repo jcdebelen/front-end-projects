@@ -1,12 +1,9 @@
 const dom = document;
 let userList = [];
-let login = false;
 
-if (localStorage.length !== 0) {
-  for (let i = 0; i < localStorage.length; i++) {
-    let retrievedObject = localStorage.getItem(i);
-    userList[i] = JSON.parse(retrievedObject);
-  }
+if (localStorage.length != 0) {
+  let retrievedObject = localStorage.getItem("userList");
+  userList = JSON.parse(retrievedObject);
 }
 
 dom.getElementById("loginsubmit").addEventListener("click", (e) => {
@@ -14,12 +11,21 @@ dom.getElementById("loginsubmit").addEventListener("click", (e) => {
   let email = dom.getElementById("email").value;
   let pword = dom.getElementById("pword").value;
   for (let i = 0; i < userList.length; i++) {
-    if (userList[i].email === email && userList[i].password === pword) {
-      login = true;
-      localStorage.setItem("activeIndex", i);
-      window.location.href = "./dashboard.html";
-      return;
+    if (userList[i].email === email) {
+      if (userList[i].password === pword) {
+        sessionStorage.setItem("activeIndex", i);
+        window.location.href = "./dashboard.html";
+        return;
+      } else {
+        window.alert("Password is incorrect.");
+      }
+    } else if (i === userList.length - 1) {
+      window.alert("Email is not registered. User does not exists.");
     }
   }
-  window.alert("Either email or password is incorrect.");
 });
+
+// localStorage.setItem(
+//   "0",
+//   '{"fname":"Super","lname":"Admin","email":"admin","password":"superpass","balance":"confidential","expenses":{}}'
+// );

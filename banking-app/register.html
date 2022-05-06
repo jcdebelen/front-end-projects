@@ -36,15 +36,6 @@
             >
           </div>
           <div class="formcon">
-            <input type="text" id="fname" placeholder="First Name" required />
-            <label for="fname" id="fname-label" class="label">First Name</label>
-          </div>
-          <div class="formcon">
-            <input type="text" id="lname" placeholder="Last Name" required />
-            <label for="lname" id="lname-label" class="label">Last Name</label>
-          </div>
-
-          <div class="formcon">
             <input
               type="password"
               id="pword"
@@ -54,6 +45,32 @@
             />
             <label for="password" id="pword-label" class="label"
               >Password</label
+            >
+          </div>
+          <div class="formcon">
+            <input type="text" id="fname" placeholder="First Name"
+            pattern="[a-zA-Z]*"" required />
+            <label for="fname" id="fname-label" class="label">First Name</label>
+          </div>
+          <div class="formcon">
+            <input
+              type="text"
+              id="lname"
+              placeholder="Last Name"
+              pattern="[a-zA-Z]*"
+              required
+            />
+            <label for="lname" id="lname-label" class="label">Last Name</label>
+          </div>
+          <div class="formcon">
+            <input
+              type="number"
+              id="balance"
+              placeholder="Initial Balance"
+              required
+            />
+            <label for="balance" id="balance-label" class="label"
+              >Initial Balance</label
             >
           </div>
           <input type="submit" id="submit" class="submit" />
