@@ -148,6 +148,10 @@ input::placeholder {
   justify-content: center;
 }
 
+#userlist {
+  display: none;
+}
+
 #usertable,
 #transacttable {
   border-collapse: collapse;
@@ -197,4 +201,12 @@ td {
 #expensestable td {
   text-align: left;
   padding: 5px;
+}
+
+.controls {
+  border: none;
+  padding-left: 5px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }

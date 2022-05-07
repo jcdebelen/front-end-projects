@@ -18,14 +18,41 @@ dom.getElementById("loginsubmit").addEventListener("click", (e) => {
         return;
       } else {
         window.alert("Password is incorrect.");
+        return;
       }
     } else if (i === userList.length - 1) {
-      window.alert("Email is not registered. User does not exists.");
+      window.alert("Email is not yet registered. User does not exists.");
     }
   }
 });
 
-// localStorage.setItem(
-//   "0",
-//   '{"fname":"Super","lname":"Admin","email":"admin","password":"superpass","balance":"confidential","expenses":{}}'
-// );
+let admin = {
+  fname: "The",
+  lname: "Admin",
+  email: "admin",
+  password: "superpass",
+  balance: 10000000,
+  expenses: [],
+  transaction: [
+    {
+      date: "Confidential",
+      transaction: "Initial Deposit",
+      amount: "Confidential",
+    },
+  ],
+  fullname: "The Admin",
+  created: "Confidential",
+};
+
+if (userList.length > 0) {
+  if (userList[0].email !== "admin") {
+    createAdmin();
+  }
+} else if (userList.length === 0) {
+  createAdmin();
+}
+
+function createAdmin() {
+  userList.unshift(admin);
+  localStorage.setItem("userList", JSON.stringify(userList));
+}

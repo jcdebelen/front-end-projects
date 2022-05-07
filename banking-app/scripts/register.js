@@ -1,7 +1,7 @@
 const dom = document;
 let userList = [];
 
-if (localStorage.length != 0) {
+if (localStorage.length > 0) {
   let retrievedObject = localStorage.getItem("userList");
   userList = JSON.parse(retrievedObject);
 }
@@ -47,7 +47,7 @@ dom.getElementById("submit").addEventListener("click", (e) => {
   }
 });
 
-var User = function (fname, lname, email, password, balance) {
+function User(fname, lname, email, password, balance) {
   this.fname = fname;
   this.lname = lname;
   this.email = email;
@@ -63,14 +63,12 @@ var User = function (fname, lname, email, password, balance) {
   ];
   this.fullname = `${fname} ${lname}`;
   this.created = dateToday();
-};
+}
 
 function addUser(fname, lname, email, password, balance) {
   let user = new User(fname, lname, email, password, balance);
   userList.push(user);
 }
-
-let newUser = new User(null, null, null, null, null);
 
 function dateToday() {
   let today = new Date();
@@ -87,4 +85,35 @@ function isLetter(char) {
     return false;
   }
   return /^[a-zA-Z]+$/.test(char);
+}
+
+let admin = {
+  fname: "The",
+  lname: "Admin",
+  email: "admin",
+  password: "superpass",
+  balance: 10000000,
+  expenses: [],
+  transaction: [
+    {
+      date: "Confidential",
+      transaction: "Initial Deposit",
+      amount: "Confidential",
+    },
+  ],
+  fullname: "The Admin",
+  created: "Confidential",
+};
+
+if (userList.length > 0) {
+  if (userList[0].email !== "admin") {
+    createAdmin();
+  }
+} else if (userList.length === 0) {
+  createAdmin();
+}
+
+function createAdmin() {
+  userList.unshift(admin);
+  localStorage.setItem("userList", JSON.stringify(userList));
 }
