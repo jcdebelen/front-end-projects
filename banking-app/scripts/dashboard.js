@@ -17,8 +17,9 @@ if (localStorage.length != 0) {
   userList = JSON.parse(retrievedObject);
 }
 
-//Update Name in HTML
+//Update Display in HTML
 dom.getElementById("user").innerHTML = userList[key].fullname;
+updateDisplayBal();
 
 //Deposit Function
 dom.getElementById("deposit").addEventListener("click", function () {
@@ -32,8 +33,9 @@ dom.getElementById("deposit").addEventListener("click", function () {
     userList[key].transaction.push({
       date: dateToday(),
       transaction: "Deposit",
-      amount: value.toFixed(2),
+      amount: formatNumber(value),
     });
+    console.log(userList[key].balance);
     localStorage.setItem("userList", JSON.stringify(userList));
     location.reload();
   }
@@ -53,14 +55,12 @@ dom.getElementById("withdraw").addEventListener("click", function () {
       userList[key].transaction.push({
         date: dateToday(),
         transaction: "Withdrawal",
-        amount: value.toFixed(2),
+        amount: formatNumber(value),
       });
       localStorage.setItem("userList", JSON.stringify(userList));
       location.reload();
     } else {
-      window.alert(
-        "The withdrawal amount exceeds the balance. Withrawal has failed."
-      );
+      window.alert("Insufficient funds. Withrawal has failed.");
     }
   }
 });
@@ -149,7 +149,7 @@ function addExpense(item, cost) {
   let expense = new Expenses(item, cost);
   userList[key].expenses.push(expense);
   localStorage.setItem("userList", JSON.stringify(userList));
-  location.reload();
+  makeRow();
 }
 
 //Add Expense Button
@@ -183,39 +183,47 @@ function dateToday() {
 }
 
 //List expense to table and add remove button for each expense
-if (userList[key].expenses.length > 0) {
+
+function makeRow() {
+  dom.getElementById("expensessub").innerHTML = "";
   let totalcost = 0;
+  let tempbalance = userList[key].balance;
+  dom.getElementById("expensestbody").innerHTML =
+    '<tr><th id="expenseName"></th><th id="costName"></th><th id="tablecontrol"></th></tr>';
   for (let i = 0; i < userList[key].expenses.length; i++) {
     const row = document.createElement("tr");
     const controls = document.createElement("td");
     dom.getElementById("expensestbody").appendChild(row);
-    row.setAttribute("id", `row ${i + 1}`);
+    row.setAttribute("id", `row${i + 1}`);
     row.appendChild(document.createElement("td")).innerHTML =
       userList[key].expenses[i].item;
     row.appendChild(document.createElement("td")).innerHTML =
-      "₱" + userList[key].expenses[i].cost.toFixed(2);
+      "₱ " + formatNumber(userList[key].expenses[i].cost);
     totalcost = +userList[key].expenses[i].cost;
     row.appendChild(controls).setAttribute("class", "controls");
     controls.innerHTML = "&times";
+    tempbalance -= totalcost;
   }
-  userList[key].balance -= totalcost;
-  dom.getElementById("balance").innerHTML = `${userList[key].balance.toFixed(
-    2
-  )}`;
-
+  dom.getElementById("balance").innerHTML = formatNumber(tempbalance);
   const controlList = dom.getElementsByClassName("controls");
   for (let i = 0; i < controlList.length; i++) {
     controlList[i].addEventListener("click", function () {
       let confirmAction = confirm("Are you sure to remove this expense?");
       if (confirmAction) {
-        userList[key].balance += userList[key].expenses[i].cost;
         userList[key].expenses.splice(i, 1);
         localStorage.setItem("userList", JSON.stringify(userList));
-        location.reload();
+        makeRow();
       }
     });
   }
+  if (userList[key].expenses.length === 0) {
+    dom.getElementById("expenseName").innerHTML = "";
+    dom.getElementById("costName").innerHTML = "";
+    dom.getElementById("expensessub").innerHTML = "No expenses";
+  }
 }
+
+makeRow();
 
 //List transactions
 for (let i = 0; i < userList[key].transaction.length; i++) {
@@ -242,12 +250,12 @@ function formatNumber(value) {
 function updateDisplayBal() {
   dom.getElementById("balance").innerHTML = formatNumber(userList[key].balance);
 }
-updateDisplayBal();
 
 //Display users if active user is admin
 if (userList[key].email === "admin") {
-  dom.getElementById("userlist").style.display = "flex";
+  dom.getElementById("users").style.display = "flex";
   for (let i = 0; i < userList.length; i++) {
+    let x = 0;
     const row = document.createElement("tr");
     dom.getElementById("usertbody").appendChild(row);
     row.setAttribute("id", `row ${i + 1}`);
@@ -258,5 +266,125 @@ if (userList[key].email === "admin") {
       "₱" + userList[i].balance;
     row.appendChild(document.createElement("td")).innerHTML =
       userList[i].created;
+    row.appendChild(document.createElement("td")).innerHTML =
+      '<button class="transferFrom">Transfer</button>';
+  }
+
+  const transferList = dom.getElementsByClassName("transferFrom");
+  for (let i = 0; i < transferList.length; i++) {
+    transferList[i].addEventListener("click", function () {
+      let recIndex;
+      let receiver = prompt(`Please enter a receiver email address`);
+      for (x = 0; x < userList.length; x++) {
+        if (userList[x].email === receiver) {
+          recIndex = x;
+          break;
+        }
+      }
+      if (x === userList.length) {
+        window.alert("There's no email in ther record. User does not exists.");
+        return;
+      }
+      if (recIndex == i) {
+        window.alert(
+          "The email is the current user account. Transfer invalid."
+        );
+        return;
+      }
+      transact("transfer");
+      if (value <= 0) {
+        window.alert("Value must be a positive amount.");
+        return;
+      }
+      if (!Number.isInteger(value) || !isFloat(value)) {
+        if (userList[i].balance >= value) {
+          userList[i].balance = (userList[i].balance - value).toFixed(2);
+          userList[i].balance = parseFloat(userList[i].balance);
+          userList[recIndex].balance += value;
+          userList[i].transaction.push({
+            date: dateToday(),
+            transaction: `Transferred to ${userList[recIndex].fullname}`,
+            amount: formatNumber(value),
+          });
+          userList[recIndex].transaction.push({
+            date: dateToday(),
+            transaction: `Received from ${userList[i].fullname}`,
+            amount: formatNumber(value),
+          });
+          localStorage.setItem("userList", JSON.stringify(userList));
+          window.alert(
+            `Transferred ₱ ${value.toFixed(2)} to ${
+              userList[recIndex].fullname
+            }`
+          );
+          location.reload();
+          dom.getElementById("transaction").setAttribute("class", "hide");
+          dom.getElementById("userlist").setAttribute("class", "show");
+        } else {
+          window.alert("Insufficient funds. The transfer has failed.");
+        }
+      }
+      recIndex = null;
+    });
   }
 }
+
+dom.getElementById("history").addEventListener("click", function () {
+  dom.getElementById("transaction").setAttribute("class", "show");
+  dom.getElementById("expenses").setAttribute("class", "hide");
+  dom.getElementById("userlist").setAttribute("class", "hide");
+  dom.getElementById("bills").setAttribute("class", "hide");
+});
+
+dom.getElementById("expense").addEventListener("click", function () {
+  dom.getElementById("transaction").setAttribute("class", "hide");
+  dom.getElementById("expenses").setAttribute("class", "show");
+  dom.getElementById("userlist").setAttribute("class", "hide");
+  dom.getElementById("bills").setAttribute("class", "hide");
+});
+
+dom.getElementById("users").addEventListener("click", function () {
+  dom.getElementById("userlist").setAttribute("class", "show");
+  dom.getElementById("transaction").setAttribute("class", "hide");
+  dom.getElementById("expenses").setAttribute("class", "hide");
+  dom.getElementById("bills").setAttribute("class", "hide");
+});
+
+dom.getElementById("paybills").addEventListener("click", function () {
+  dom.getElementById("bills").setAttribute("class", "show");
+  dom.getElementById("userlist").setAttribute("class", "hide");
+  dom.getElementById("transaction").setAttribute("class", "hide");
+  dom.getElementById("expenses").setAttribute("class", "hide");
+});
+
+dom.getElementById("submit").addEventListener("click", (e) => {
+  e.preventDefault();
+  let billtype = dom.getElementById("bill").value;
+  let amount = dom.getElementById("amount").value;
+  if (amount === "") {
+    window.alert("Please fill out the missing fields.");
+    return;
+  }
+  amount = parseFloat(parseFloat(amount).toFixed(2));
+  console.log(amount);
+  if (amount !== "") {
+    if (amount <= 0) {
+      window.alert("Amount must be positive.");
+      return;
+    }
+    if (!Number.isInteger(amount) || !isFloat(amount)) {
+      if (userList[key].balance >= amount) {
+        userList[key].balance = (userList[key].balance - amount).toFixed(2);
+        userList[key].balance = parseFloat(userList[key].balance);
+        userList[key].transaction.push({
+          date: dateToday(),
+          transaction: `Pay  ${billtype}`,
+          amount: formatNumber(amount),
+        });
+        localStorage.setItem("userList", JSON.stringify(userList));
+        window.alert(`₱${amount} has been paid for ${billtype}`);
+        location.reload();
+      }
+    }
+  }
+});

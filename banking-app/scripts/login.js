@@ -10,6 +10,9 @@ dom.getElementById("loginsubmit").addEventListener("click", (e) => {
   e.preventDefault();
   let email = dom.getElementById("email").value;
   let pword = dom.getElementById("pword").value;
+  if (email === "" && pword === "") {
+    return;
+  }
   for (let i = 0; i < userList.length; i++) {
     if (userList[i].email === email) {
       if (userList[i].password === pword) {

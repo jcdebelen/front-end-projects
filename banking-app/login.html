@@ -4,52 +4,63 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="assets/bank.png" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Register</title>
+    <title>Client Login</title>
   </head>
   <body>
     <div id="main">
       <nav id="nav">
         <ul>
-          <a href="home.html"><li>Home</li></a>
-          <a href="register.html"><li>Register</li></a>
-          <li>Contact Us</li>
           <a href="login.html"><li>Login</li></a>
+          <a href="register.html"><li>Register</li></a>
+          <a href="contactus.html"><li>Contact Us</li> </a>
         </ul>
       </nav>
       <section id="login">
-        <div id="title">
-          <h1>Client Login</h1>
+        <div id="loginCon">
+          <div id="title">
+            <h1>Login to FreeBank</h1>
+          </div>
+          <form id="form">
+            <div class="formcon">
+              <input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                autocomplete="current-password"
+                required
+              />
+              <label for="email" id="email-label" class="label"
+                >E-mail address</label
+              >
+            </div>
+            <div class="formcon">
+              <input
+                type="password"
+                id="pword"
+                placeholder="Password"
+                autocomplete="current-password"
+                required
+              />
+              <label for="password" id="pword-label" class="label"
+                >Password</label
+              >
+            </div>
+            <input type="submit" id="loginsubmit" class="submit" />
+            <p>
+              Don't have an account yet? <a href="register.html">Sign Up</a>
+            </p>
+          </form>
         </div>
-        <form id="form">
-          <div class="formcon">
-            <input
-              type="email"
-              id="email"
-              placeholder="E-mail"
-              autocomplete="current-password"
-              required
-            />
-            <label for="email" id="email-label" class="label"
-              >E-mail address</label
-            >
-          </div>
-          <div class="formcon">
-            <input
-              type="password"
-              id="pword"
-              placeholder="Password"
-              autocomplete="current-password"
-              required
-            />
-            <label for="password" id="pword-label" class="label"
-              >Password</label
-            >
-          </div>
-          <input type="submit" id="loginsubmit" class="submit" />
-        </form>
+
+        <footer id="contactus">
+          <p>
+            Need help?
+            <span id="contact"><a href="contactus.html">Contact Us</a></span>
+          </p>
+        </footer>
       </section>
-      <footer></footer>
     </div>
     <script src="scripts/login.js"></script>
   </body>

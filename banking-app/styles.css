@@ -1,32 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish&family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mulish&family=Poppins&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   z-index: 0;
   box-sizing: border-box;
-  /* font-family: "Noto Sans", sans-serif; */
   font-family: "Mulish", sans-serif;
+  color: var(--lblack);
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+:root {
+  --blue: #373389;
+  --gray: #73777b;
+  --orange: #ec994b;
+  --dwhite: #f1eee9;
+  --lblack: rgb(49, 49, 49);
 }
 
 #nav {
   width: 100%;
   position: fixed;
+  background-color: var(--blue);
+  border: 0 0 2px 0 var(--gray);
+  border-bottom: solid;
+  z-index: 2;
+}
+
+#nav a {
+  text-decoration: none;
 }
 
 ul {
   list-style: none;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  z-index: 2;
 }
 
 li {
   margin: 5px 1vw;
   padding: 5px;
-  border: 1px solid;
   border-radius: 7px;
-  z-index: 999;
+  z-index: 2;
+  font-family: "Bebas Neue", cursive;
+  font-size: 20px;
+  width: 100px;
+  text-align: center;
+  background-color: #ec994b;
+  color: var(--lblack);
+  border: 1px solid gray;
 }
 
 #register {
@@ -46,6 +70,10 @@ li {
   justify-content: center;
 }
 
+#form a {
+  color: #15133c;
+}
+
 .formcon {
   display: flex;
   flex-direction: row;
@@ -55,12 +83,19 @@ input {
   margin: 10px;
   font-size: 24px;
   border: none;
-  border-bottom: 2px solid;
   height: 50px;
   padding-left: 10px;
   width: 20vw;
   min-width: 310px;
-  outline-color: orange;
+  outline-color: none;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 3px solid;
 }
 
 input::placeholder {
@@ -86,36 +121,81 @@ input::placeholder {
 #pword:focus-within + #pword-label,
 #pword:not(:placeholder-shown) + #pword-label,
 #balance:focus-within + #balance-label,
-#balance:not(:placeholder-shown) + #balance-label {
+#balance:not(:placeholder-shown) + #balance-label,
+#amount:focus-within + #amount-label,
+#amount:not(:placeholder-shown) + #amount-label {
   transform: translateY(-24px) scale(0.8);
   background-color: white;
   color: rgb(41, 41, 41);
+  border-radius: 5px;
+  padding: 0 5px;
 }
 
 .submit {
-  padding: 10px;
+  padding: 0 10px;
   font-size: 18px;
   margin: 10px;
   border-radius: 10px;
   border-width: 1px;
   min-width: 180px;
   width: 13vw;
+  background-color: #ec994b;
+  border: 1px solid gray;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+.submit:focus {
+  border: 1px solid rgb(69, 69, 69);
+}
+
+.submit:hover {
+  background-color: #d79251;
+}
+
+a {
+  color: #f1eee9;
+}
+
+#main {
+  background-color: #f1eee9;
+  background-image: url("assets/wave.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 #login {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  background-image: url("assets/banking.svg ");
+  background-repeat: no-repeat;
+  background-position-x: 75%;
+  background-position-y: 30%;
+  background-attachment: fixed;
+}
+
+#contactus {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+  color: #f1eee9;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#contactus p {
+  color: #f1eee9;
 }
 
 #dashboard {
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #info {
@@ -123,49 +203,98 @@ input::placeholder {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 35%;
+  height: 100vh;
+  border-right: 2px solid var(--gray);
+  align-self: flex-start;
+}
+
+#balanceCon {
+  background-color: white;
+  min-width: 300px;
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
 }
 
 #userCon {
   margin: 10px;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#user {
+  margin: 5px 0 0 0;
 }
 
 .button {
   height: 50px;
-  width: 120px;
+  width: 300px;
   margin: 5px;
+  background-color: var(--orange);
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+  border-color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 #logout {
   cursor: pointer;
+  position: relative;
 }
 
 #userlist,
 #transaction {
   height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0%;
+  width: 65%;
 }
 
-#userlist {
+.hide {
   display: none;
+}
+
+.show {
+  display: flex;
 }
 
 #usertable,
 #transacttable {
   border-collapse: collapse;
-  width: 70%;
+  width: 85%;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
-  background-color: white;
   table-layout: fixed;
+}
+
+#usertable {
+  width: 80%;
 }
 
 #usertable th,
 #transacttable th,
 td {
-  border: 1px solid;
+  border: 1px solid var(--blue);
   text-align: center;
+  font-size: 18px;
+  padding: 6px 0;
+  height: 40px;
 }
 
 #creation {
@@ -173,34 +302,57 @@ td {
 }
 
 #expenses {
+  height: 100vh;
   min-height: 200px;
-  width: 70%;
-  display: flex;
+  width: 65%;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background-color: rgb(255, 255, 255);
+  justify-content: center;
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
 }
+
+#expensestitle {
+  margin-bottom: 30px;
+}
+
+#expenseName {
+  min-width: 200px;
+}
+
+#tablecontrol {
+  width: 20px;
+}
+
 #expensesCon {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 100px;
+  overflow-y: scroll;
 }
 
-#expensestable {
+#expensesCon2 {
+  margin-bottom: 100px;
+}
+#expensestable,
+#transacttable {
   border-collapse: collapse;
-  width: 90%;
-  background-color: white;
-  /* table-layout: fixed; */
+}
+
+#expensebutton {
+  width: 200px;
+  border-radius: 30px;
+  margin-top: 30px;
 }
 
 #expensestable th,
 #expensestable td {
   text-align: left;
-  padding: 5px;
+  padding: 5px 10px;
+  border: none;
 }
 
 .controls {
@@ -209,4 +361,64 @@ td {
   display: flex;
   justify-content: center;
   cursor: pointer;
+}
+
+#date {
+  width: 200px;
+}
+
+.buttonimg {
+  height: 35px;
+  padding: 0 5px;
+  position: absolute;
+  left: 0;
+}
+
+#userimg {
+  height: 70px;
+}
+
+.button:hover {
+  background-color: #da893e;
+}
+
+.tableCon {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  overflow-y: scroll;
+}
+
+#loginCon {
+  align-self: flex-start;
+  margin-left: 15vw;
+}
+
+#contactpage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bills {
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0%;
+  width: 65%;
+}
+select {
+  font-size: 24px;
+  margin-left: 10px;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+#bill-label {
+  font-size: 24px;
 }
